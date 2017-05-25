@@ -1,5 +1,5 @@
-<div class="pull-right">
-  <%= link_to("新增商品", new_product_path, :class => "btn btn-default" ) %>
+<div class="border-left">
+  <h1> 商品目录 </h1>
 </div>
 
 <br><br>
@@ -11,7 +11,6 @@
       <td>描述</td>
       <td>价格</td>
       <td>库存</td>
-      <td>选项</td>
       <td>创建日期</td>
     </tr>
   </thead>
@@ -23,10 +22,7 @@
       <td><%= product.price %></td>
       <td><%= product.quantity %></td>
     </td>
-    <td>
-      <%= link_to("修改", edit_product_path(product)) %>
-      <%= link_to("删除", admin_product_path(product), :method => :delete, :data => { :confirm => "您确定要删除吗?" }) %>
-    </td>
+
     <td>
       <%= product.created_at %>
     </td>
