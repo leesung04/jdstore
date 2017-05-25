@@ -1,18 +1,31 @@
 <div class="pull-right">
-  <%= link_to("Add a product", new_admin_product_path, :class => "btn btn-default" ) %>
+  <%= link_to("新增商品", new_admin_product_path, :class => "btn btn-default" ) %>
 </div>
 
 <br><br>
 
 <table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>品名</td>
+      <td>描述</td>
+      <td>价格</td>
+      <td>库存</td>
+      <td>选项</td>
+      <td>创建日期</td>
+    </tr>
+  </thead>
   <% @products.each do |product| %>
   <tr>
     <td>
       <%= link_to(product.title, admin_product_path(product)) %>
+      <td><%= product.description %></td>
+      <td><%= product.price %></td>
+      <td><%= product.quantity %></td>
     </td>
     <td>
       <%= link_to("修改", edit_admin_product_path(product)) %>
-      <%= link_to("删除", admin_product_path(product), :method => :delete, :data => { :confirm => "您确定要删除吗?" }) %>
+      <%= link_to("删除", product_path(product), :method => :delete, :data => { :confirm => "您确定要删除吗?" }) %>
     </td>
     <td>
       <%= product.created_at %>

@@ -1,11 +1,8 @@
-<h1> 新增产品 </h1>
+<div class="col-md-4 col-md-offset-4">
+    <h2>新增商品</h2>
 
-<%= simple_form_for [:admin,@product] do |f| %>
+    <hr>
 
-<%= f.input :title, :label => "品名" %>
-<%= f.input :description, :label => "描述" %>
-<%= f.input :price, :label => "价格" %>
-<%= f.input :quantity, :label => "库存" %>
+    <%= render "form" %>
 
-  <%= f.submit "提交" %>
-<% end %>
+</div>
